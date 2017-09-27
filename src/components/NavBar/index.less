@@ -1,0 +1,114 @@
+@import '../../style/variables';
+
+.MobileNavBar {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  background-color: @dark;
+
+  .burger-menu {
+    margin-left: 5px;
+    font-size: 30px;
+    line-height: 30px;
+    color: #CCAC00;
+  }
+
+  .mobile-dropdown {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 70%;
+    margin-top: 50px;
+    border-top: 2px solid grey;
+    background-color: @dark;
+
+    &.open {
+      transform: translateX(0);
+      transition: 0.5s;
+    }
+  
+    &.close {
+      transform: translateX(-100%);
+      transition: 0.5s;
+    }
+
+    .drop-down-item {
+      padding: 10px;
+
+      .item-line {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+  
+        .main-item {
+          color: @gold;
+          font-size: 22px;
+        }
+  
+        .animate {
+          transition: 0.3s;
+          
+          &.active {
+            transform: rotate(90deg);
+          }
+        }
+      }
+      
+      .sub-item-list {
+        display: flex;
+        flex-direction: column;
+        margin-left: 15%;
+  
+        .sub-item {
+          width: max-content;
+          font-size: 18px;
+          color: #CCAC00;
+          transform: translateX(-250%);
+          transition: 0.3s;
+
+          &.active {
+            transform: translateX(0%);
+          }
+        }
+      }
+    }
+  }
+}
+
+.DesktopNavBar {
+  height: 60px;
+  background-color: @dark;
+
+  .nav-items {
+    display: flex;
+    height: 60px;
+    color: @gold;
+    line-height: 60px;
+    font-size: 18px;
+
+    .item {
+      padding: 0px 10px;
+
+      &.selected {
+        text-shadow: 0px 0px 1px lightgray;
+      }
+    }
+
+    .sub-items {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      background-color: @dark;
+      width: 100%;
+      padding: 0px 10px;
+      transform: translateX(-200%);
+      transition: 0.3s;
+      z-index: 2;
+
+      &.active {
+        transform: translateX(0);
+        border-top: 1px solid @gold;
+      }
+    }
+  }
+}

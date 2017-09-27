@@ -1,0 +1,178 @@
+@import '../../style/variables';
+
+.background-img {
+  background-position: 63% 42%;
+  background-size: cover;
+
+  &.mobile {
+
+    @media screen and (min-width: @tabletBreakpoint) {
+      height: 250px;
+
+      .HighlightBox {
+        height: 250px;
+        justify-content: space-between;
+      }
+    }
+
+    .line {
+      width: 20%;
+      border-top: 1px solid @gold;
+    }
+  }
+
+  &.desktop {
+    height: 500px;
+
+    .HighlightBox {
+      height: 500px;
+
+      .line {
+        width: 20%;
+        position: absolute;
+
+        &.top {
+          border-top: 1px solid @gold;
+          height: 150px;
+          margin-top: 75px;
+        }
+        &.left {
+          border-left: 1px solid @gold;
+          left: 5%;
+        }
+        &.right {
+          border-right: 1px solid @gold;
+          right: 5%;
+        }
+        &.bottom {
+          border-bottom: 1px solid @gold;
+          height: 150px;
+          margin-top: 250px;
+        }
+      }
+
+      .box-content {
+        display: flex;
+        justify-content: space-between;
+        color: @title;
+        width: 90%;
+        position: absolute;
+        margin-top: 50px;
+        height: 400px;
+
+        .box-left {
+          display: flex;
+          align-items: center;
+          width: 30%;
+          margin-left: 20px;
+
+          @media screen and (min-width: @largeMonitorBreakpoint) {
+            width: 20%;
+          }
+
+          .hidden-arrow {
+            height: 60px;
+            width: 40px;
+            margin-left: -16px;
+            z-index: 0;
+          }
+
+          .box-menu {
+            background-color: @dark;
+            color: @title;
+            width: 275px;
+            height: 100%;
+            z-index: 1;
+
+            ul {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-around;
+              height: 100%;
+              margin: 0;
+              padding: 0px 40px;
+            }
+          }
+        }
+
+        .middle-content {
+          width: 50%;
+          margin: 0px 20px;
+          transition: 0.3s;
+          transform: translateX(-200%);
+          background-image: url('./scroll.png');
+          background-size: cover;
+          padding-top: 8%;
+          background-position: 0% 7%;
+
+          > p {
+            color: @dark;
+            margin: 0 50px;
+            font-family: 'hand-writing';
+            font-size: 22px;
+
+            @media screen and (min-width: @largeMonitorBreakpoint) {
+              margin: 0 70px;
+            }
+          }
+
+          &.middle-open {
+            transform: translateX(0%);
+          }
+        }
+
+        .box-cta {
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          width: 30%;
+          margin-right: 20px;
+
+          @media screen and (min-width: @largeMonitorBreakpoint) {
+            width: 20%;
+          }
+
+          @media screen and (max-width: @largeMonitorBreakpoint) {
+            &.cta-hidden {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .HighlightBox {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.6);
+
+    .title-line {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+
+      .title {
+        font-family: 'box-title';
+        font-size: 24px;
+        color: @title;
+      }
+    }
+
+    .content {
+      text-align: center;
+      margin: 0px;
+      padding:30px;
+      color: @title;
+    }
+
+    .button {
+      width: 100%;
+      text-align: center;
+      border-top: 1px solid;
+      padding: 15px 0px;
+    }
+  }
+}
