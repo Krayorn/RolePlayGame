@@ -6,12 +6,12 @@ import './index.less'
 
 const Button = ({content, className, color, size, link}) =>
   link
-  ? <Link
-    className={`button-link ${className} ${color}-theme ${size} animate `}
-    to={link} >
-    {content}
-  </Link>
-  : <button>Design this shit if you need it someday</button>
+    ? <Link
+      className={`button-link ${className} ${color}-theme ${size} animate `}
+      to={link} >
+      {content}
+    </Link>
+    : <button>Design this shit if you need it someday</button>
 
 export default Button
 

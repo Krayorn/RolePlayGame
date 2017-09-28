@@ -8,16 +8,17 @@ class DefaultLayout extends Component {
   }
 
   componentDidMount = () => {
-    window.addEventListener("resize", this.updateDimensions)
+    window.addEventListener('resize', this.updateDimensions)
   }
 
   componentWillUnmount = () => {
-    window.removeEventListener("resize", this.updateDimensions)
+    window.removeEventListener('resize', this.updateDimensions)
   }
 
   updateDimensions = () => {
-      this.setState({width: window.innerWidth});
+    this.setState({width: window.innerWidth})
   }
+
   render() {
     return (
       <div>

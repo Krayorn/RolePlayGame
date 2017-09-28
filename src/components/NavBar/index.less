@@ -21,12 +21,13 @@
     margin-top: 50px;
     border-top: 2px solid grey;
     background-color: @dark;
+    z-index: 2;
 
     &.open {
       transform: translateX(0);
       transition: 0.5s;
     }
-  
+
     &.close {
       transform: translateX(-100%);
       transition: 0.5s;
@@ -39,26 +40,26 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-  
+
         .main-item {
           color: @gold;
           font-size: 22px;
         }
-  
+
         .animate {
           transition: 0.3s;
-          
+
           &.active {
             transform: rotate(90deg);
           }
         }
       }
-      
+
       .sub-item-list {
         display: flex;
         flex-direction: column;
         margin-left: 15%;
-  
+
         .sub-item {
           width: max-content;
           font-size: 18px;

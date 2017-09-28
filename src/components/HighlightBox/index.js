@@ -11,15 +11,15 @@ class HighlightBox extends Component {
   }
 
   componentDidMount = () => {
-    window.addEventListener("resize", this.updateDimensions)
+    window.addEventListener('resize', this.updateDimensions)
   }
 
   componentWillUnmount = () => {
-    window.removeEventListener("resize", this.updateDimensions)
+    window.removeEventListener('resize', this.updateDimensions)
   }
 
   updateDimensions = () => {
-      this.setState({width: window.innerWidth});
+    this.setState({width: window.innerWidth})
   }
 
   handleArrowClick = () => {
@@ -29,7 +29,7 @@ class HighlightBox extends Component {
   render() {
     return (
       window.innerWidth <= 992
-      ? <div style={{'backgroundImage': this.props.bgimg}} className='background-img mobile'>
+        ? <div style={{'backgroundImage': this.props.bgimg}} className='background-img mobile'>
           <div className='HighlightBox' >
             <p className='title-line'>
               <span className='line' />
@@ -45,7 +45,7 @@ class HighlightBox extends Component {
             />
           </div>
         </div>
-      : <div style={{'backgroundImage': this.props.bgimg}} className='background-img desktop'>
+        : <div style={{'backgroundImage': this.props.bgimg}} className='background-img desktop'>
           <div className='HighlightBox' >
             <p className='title-line'>
               <span className='line top left' />
