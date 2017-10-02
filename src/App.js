@@ -3,7 +3,9 @@ import { Switch, Route } from 'react-router-dom'
 
 import DefaultLayout from './layouts/DefaultLayout'
 
+// Screens
 import Home from './screens/Home'
+import Chapters from './screens/Chapters'
 import NotFound from './screens/NotFound'
 
 const App = () => (
@@ -16,16 +18,22 @@ const App = () => (
         </DefaultLayout>
       }/>
 
-      <Route exact path='/chapters' render={props =>
-        <div> This is the template for chapters</div>
+      <Route exact path='/chapters/:title' render={props =>
+        <DefaultLayout>
+          <Chapters {...props} />
+        </DefaultLayout>
       }/>
 
       <Route exact path='/characters' render={props =>
-        <div> This is the template for characters</div>
+        <DefaultLayout>
+          <div> This is the template for characters</div>
+        </DefaultLayout>
       }/>
 
       <Route exact path='/lore' render={props =>
-        <div> This is the template for lore</div>
+        <DefaultLayout>
+          <div> This is the template for lore</div>
+        </DefaultLayout>
       }/>
 
       <Route component={NotFound} />

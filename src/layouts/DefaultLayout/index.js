@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 // Components
 import NavBar from '~/components/NavBar'
+import Footer from '~/components/Footer'
 
 class DefaultLayout extends Component {
   componentWillMount = () => {
@@ -24,6 +25,7 @@ class DefaultLayout extends Component {
       <div>
         <NavBar />
         {this.props.children}
+        <Footer />
       </div>
     )
   }

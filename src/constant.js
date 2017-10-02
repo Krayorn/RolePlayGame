@@ -2,7 +2,10 @@ export const linkToHome = '/'
 export const linkToChapterIntro = '/chapters'
 export const linkToCharactersMenu = '/characters'
 export const linkToLoreMenu = '/lore'
-export const chapterDrop = [{subTitle: 'Priez pour vos morts', link: '/chapter/1'},{subTitle: 'A la chasse a l\'orque', link: '/chapter/2'}]
+export const chapterDrop = [
+  {subTitle: 'Priez pour vos morts', link: '/chapter/1'},
+  {subTitle: 'A la chasse a l\'orque', link: '/chapter/2'}
+]
 export const rolePlayIntro = {
   Chapters: `
     Vous arrivez à Ectallion, les rues sont sombres, boueuses, une enseigne d'auberge attire votre regard, vous n'êtes pas
@@ -23,4 +26,24 @@ export const rolePlayIntro = {
     majestueux, après quelques minutes de contemplation, vous finissez par entrer. Dans l'ombre des rayons emplis d'ouvrages
     plus anciens que le monde, vous réalisez l'ampleur du savoir stocké dans la cité, alors que vous progressez parmi les
     rangées, un vieux manuscrit vous intrigue, vous tournez alors la lourde couverture poussiéreuse et commencez à lire...`
+}
+export const homeList = {
+  Chapters: [
+    `Vivez l'aventure du point de vue des aventuriers`,
+    `Tentez de résoudre les éngimes et avancez dans l'intrigue en même temps qu'eux`,
+    `Observez les liens...`,
+    '...Ou les tensions se créer dans le groupe'
+  ],
+  Characters: [
+    `Suivez leur évolutions au fil des chapitres...`,
+    `Nouvelles pièces d'équipements, armes, armures...`,
+    `...Mais aussi sorts surpuissants et talents cachés`,
+    'Et découvrez en plus sur leur passé....'
+  ],
+  Lore: [
+    `Découvrez le monde d'Unrebor...`,
+    `Admirez les cités et plongez dans l'histoire passionante de ce monde`,
+    `Guildes, politique, tenez vous au courant des relations entre les Etats`,
+    'Parcourez les pages du bestiaire et observez les monstres que les aventuriers affrontent'
+  ]
 }
