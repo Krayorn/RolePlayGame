@@ -9,14 +9,14 @@
 - [MongoDB V 3.4.1](https://www.mongodb.com/download-center#community)
 - [Yarn](https://yarnpkg.com/en/docs/install)
 
-- `yarn install` to download the requirements
+`yarn install` to download the requirements
 
 ## Available Scripts
 
-# `yarn start`
+### `yarn start`
 start the client (default port 3000)
 
-# `nodemon server/`
+### `nodemon server/`
 start the api (default port 3001)
 
 ## Basic Linter Options
