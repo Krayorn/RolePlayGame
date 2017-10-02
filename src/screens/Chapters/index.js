@@ -3,10 +3,17 @@ import React, { Component } from 'react'
 import ChapterIntro from './ChapterIntro'
 import ChapterContent from './ChapterContent'
 import ChapterRecap from './ChapterRecap'
+// Services
+import { restPost } from '~/services/api.js'
 
 class Chapters extends Component {
-
-  // Request chapter to db
+  componentWillMount = async () => {
+    const result = await restPost('/chapters', {title: this.props.match.params.title})
+    this.setState({
+      result
+    })
+    console.log(result)
+  }
 
   render() {
     return (
