@@ -22,10 +22,10 @@ const Encyclopedia = {
 
 const HomeNav = () => (
   <div className="highlightBox_container">
-    <HighlightBox style={Chapters}/>
-    <HighlightBox style={Caracters}/>
-    <HighlightBox style={Lore}/>
-    <HighlightBox style={Encyclopedia}/>
+    <HighlightBox link={'/chapters/0'} style={Chapters}/>
+    <HighlightBox link={'/characters'} style={Caracters}/>
+    <HighlightBox link={'/lore'} style={Lore}/>
+    <HighlightBox link={'/encyclopedia'} style={Encyclopedia}/>
   </div>
 )
 

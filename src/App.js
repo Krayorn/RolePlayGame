@@ -36,6 +36,12 @@ const App = () => (
         </DefaultLayout>
       }/>
 
+      <Route exact path='/encyclopedia' render={props =>
+        <DefaultLayout>
+          <div> This is the template for encyclopedia</div>
+        </DefaultLayout>
+      }/>
+
       <Route component={NotFound} />
     </Switch>
   </main>

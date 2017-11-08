@@ -29,17 +29,10 @@ router.get('/', function(req, res) {
   res.json({ message: 'API Initialized!'})
 })
 
-router.route('/chapters')
+router.route('/chapters/:number')
 
   .get((req, res) => {
-    Chapter.find((err, data) => {
-      if (err) res.send(err)
-      return res.send(data)
-    })
-  })
-
-  .post((req, res) => {
-    Chapter.findOne({title: req.body.title}, (err, data) => {
+    Chapter.findOne({number: req.params.number}, (err, data) => {
       if (err) res.send(err)
       return res.send(data)
     })

@@ -3,8 +3,9 @@
 .MobileNavBar {
   display: flex;
   align-items: center;
-  height: 50px;
+  height: 60px;
   background-color: @dark;
+  position: relative;
 
   .burger-menu {
     margin-left: 5px;
@@ -16,9 +17,9 @@
   .mobile-dropdown {
     position: absolute;
     top: 0;
-    height: 100%;
+    height: 100vh;
     width: 70%;
-    margin-top: 50px;
+    margin-top: 60px;
     border-top: 2px solid grey;
     background-color: @dark;
     z-index: 2;
@@ -77,17 +78,18 @@
 }
 
 .DesktopNavBar {
-  height: 60px;
+  height: 80px;
   position: relative;
   z-index: 1;
   background-color: @dark;
 
   .nav-items {
     display: flex;
-    height: 60px;
+    height: 80px;
     color: @gold;
-    line-height: 60px;
-    font-size: 18px;
+    line-height: 80px;
+    font-size: 22px;
+    justify-content: center;
 
     .item {
       padding: 0px 10px;
@@ -98,19 +100,23 @@
     }
 
     .sub-items {
-      position: relative;
+      position: absolute;
+      background: @dark;
+      border-radius: 4px;
+      box-shadow: 0 50px 100px rgba(50,50,93,.1), 0 15px 35px rgba(50,50,93,.15), 0 5px 15px rgba(0,0,0,.1);
+      transition:all 0.3s, opacity 0.1s, transform 0.2s;
+      transform-origin: 50% 0;
       display: flex;
       flex-direction: column;
-      background-color: @dark;
-      width: 100%;
-      padding: 0px 10px;
-      transform: translateX(-200%);
-      transition: 0.3s;
-      z-index: 2;
+      justify-content: center;
+      opacity:0;
+
+      .sub-item {
+        padding: 0px 10px;
+      }
 
       &.active {
-        transform: translateX(0);
-        border-top: 1px solid @gold;
+        opacity: 1;
       }
     }
   }

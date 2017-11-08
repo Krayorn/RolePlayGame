@@ -3,6 +3,7 @@ const Schema = mongoose.Schema
 
 const ChapterSchema = new Schema({
   title: String,
+  number: Number,
   content: String
 })
 

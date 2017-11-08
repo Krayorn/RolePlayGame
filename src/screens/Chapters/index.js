@@ -4,20 +4,20 @@ import ChapterIntro from './ChapterIntro'
 import ChapterContent from './ChapterContent'
 import ChapterRecap from './ChapterRecap'
 // Services
-import { restPost } from '~/services/api.js'
+import { restGet } from '~/services/api.js'
 
 class Chapters extends Component {
   componentWillMount = async () => {
-    const result = await restPost('/chapters', {title: this.props.match.params.title})
+    const result = await restGet('/chapters/' + this.props.match.params.title)
     if (result) {
       this.setState({ result })
-      console.log('result', result)
     } else {
       console.log('redirect inc')
     }
   }
 
   render() {
+    console.log('state', this.state)
     return (
       <div>
         <ChapterIntro />

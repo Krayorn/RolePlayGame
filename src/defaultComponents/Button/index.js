@@ -15,7 +15,6 @@ const Button = ({content, className, color, size, link}) =>
 
 export default Button
 
-
 Button.propTypes = {
   content: PropTypes.string.isRequired,
   className: PropTypes.string,
