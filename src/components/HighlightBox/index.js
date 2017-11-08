@@ -5,7 +5,7 @@ import './index.less'
 class HighlightBox extends Component {
   render() {
     return (
-      <div>In the box</div>
+      <div className="highlightBox" style={this.props.style}></div>
     )
   }
 }

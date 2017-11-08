@@ -1,0 +1,14 @@
+@import "../../../style/variables";
+
+.highlightBox_container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+@media screen and (min-width: @tabletBreakpoint) {
+  .highlightBox_container {
+    flex-direction: row;
+  }
+}
