@@ -1,12 +1,15 @@
 const baseURL = 'http://localhost:3001'
 
 export async function getJsonResponse (response) {
-  const json = await response.json()
+  let json
+  try {
+    json = await response.json()
+    if (response.ok) return json
+  } catch (error) {
+    console.error('Failed to fetch', json) // eslint-disable-line no-console
+    return false
+  }
 
-  if (response.ok) return json
-
-  console.error('Failed to fetch', json) // eslint-disable-line no-console
-  throw new Error(`Failed to fetch: ${response.body}`)
 }
 
 export async function restGet (uri, headers = {}) {

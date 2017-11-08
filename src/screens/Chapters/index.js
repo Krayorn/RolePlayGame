@@ -9,8 +9,12 @@ import { restPost } from '~/services/api.js'
 class Chapters extends Component {
   componentWillMount = async () => {
     const result = await restPost('/chapters', {title: this.props.match.params.title})
-    this.setState({ result })
-    console.log(result)
+    if (result) {
+      this.setState({ result })
+      console.log('result', result)
+    } else {
+      console.log('redirect inc')
+    }
   }
 
   render() {
