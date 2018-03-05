@@ -7,7 +7,7 @@ import * as constants from '~/constant.js'
 import './index.less'
 
 class NavBar extends Component {
-  state = { dropDownOpen: false }
+  state = { dropDownOpen: false, chaptersList: [] }
 
   handleBurgerClick = () => {
     this.setState({
@@ -87,13 +87,13 @@ class NavBar extends Component {
           <span onClick={this.handleBurgerClick} className='burger-menu' >☰</span>
           <div className={this.state.dropDownOpen ? 'open mobile-dropdown' : 'close mobile-dropdown'}>
             {this.renderMobileDropDownItem('Home', constants.linkToHome)}
-            {this.renderMobileDropDownItem('Chapter', constants.linkToChapterIntro , constants.chapterDrop)}
+            {this.renderMobileDropDownItem('Chapter', constants.linkToChapterIntro , this.state.chaptersList)}
           </div>
         </div>
         : <div className='DesktopNavBar'>
           <div className='nav-items' >
             {this.renderDesktopItem('Home', constants.linkToHome)}
-            {this.renderDesktopItem('Chapter', constants.linkToChapterIntro, constants.chapterDrop)}
+            {this.renderDesktopItem('Chapter', constants.linkToChapterIntro, this.state.chaptersList)}
           </div>
         </div>
     )

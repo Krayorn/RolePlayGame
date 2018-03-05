@@ -9,7 +9,6 @@ export async function getJsonResponse (response) {
     console.error('Failed to fetch', json) // eslint-disable-line no-console
     return false
   }
-
 }
 
 export async function restGet (uri, headers = {}) {
