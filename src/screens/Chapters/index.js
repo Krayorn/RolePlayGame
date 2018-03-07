@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
+
 // Components
 import ChapterIntro from './ChapterIntro'
 import ChapterContent from './ChapterContent'
 import ChapterRecap from './ChapterRecap'
+
 // Services
 import { restGet } from '~/services/api.js'
 

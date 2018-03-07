@@ -1,13 +1,22 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import { getAll } from '~/redux/actions/chapters'
+import { connect } from 'react-redux'
+
 // Components
 import { Icon } from '~/defaultComponents'
+
 // Style and helpers
 import * as constants from '~/constant.js'
+// import { componentConnector } from '~/services/utils'
 import './index.less'
 
 class NavBar extends Component {
-  state = { dropDownOpen: false, chaptersList: [] }
+  state = { dropDownOpen: false }
+
+  componentWillMount() {
+    this.props.getAll()
+  }
 
   handleBurgerClick = () => {
     this.setState({
@@ -80,7 +89,6 @@ class NavBar extends Component {
   }
 
   render () {
-
     return (
       window.innerWidth <= 992
         ? <div className='MobileNavBar'>
@@ -100,4 +108,13 @@ class NavBar extends Component {
   }
 }
 
-export default NavBar
+const mapStateToProps = (state) => ({
+  chaptersList: state.chapters.list
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  getAll: () => dispatch(getAll()),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavBar)
+

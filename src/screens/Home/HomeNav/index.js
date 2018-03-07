@@ -1,6 +1,8 @@
 import React from 'react'
+
 // Components
 import HighlightBox from '~/components/HighlightBox'
+
 // Less
 import './index.less'
 
