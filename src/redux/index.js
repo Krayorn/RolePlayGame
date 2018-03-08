@@ -19,7 +19,7 @@ const customMiddleWare = store => next => action => {
   next(action)
 
   if (customMiddlewares[action.type]) {
-    next(customMiddlewares[action.type](action))
+    customMiddlewares[action.type](action.payload = {}, next)
   }
 }
 
