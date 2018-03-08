@@ -60,7 +60,7 @@ class NavBar extends Component {
             drop &&
             drop.map((item, i) => <Link
               className={this.state[name] ? 'sub-item active' : 'sub-item' }
-              to={item.link}
+              to={`/chapters/${item.number}`}
               key={i}>
               {item.subTitle}
             </Link>)
@@ -81,7 +81,7 @@ class NavBar extends Component {
         {
           drop &&
           <div className={this.state[name] ? 'sub-items active' : 'sub-items'} >
-            {drop.map((item, i) => <Link className='sub-item' key={i} to={item.link}>{item.subTitle}</Link>)}
+            {drop.map((item, i) => <Link className='sub-item' key={i} to={`/chapters/${item.number}`}>{item.title}</Link>)}
           </div>
         }
       </span>
@@ -95,13 +95,13 @@ class NavBar extends Component {
           <span onClick={this.handleBurgerClick} className='burger-menu' >☰</span>
           <div className={this.state.dropDownOpen ? 'open mobile-dropdown' : 'close mobile-dropdown'}>
             {this.renderMobileDropDownItem('Home', constants.linkToHome)}
-            {this.renderMobileDropDownItem('Chapter', constants.linkToChapterIntro , this.state.chaptersList)}
+            {this.renderMobileDropDownItem('Chapter', constants.linkToChapterIntro , this.props.chaptersList)}
           </div>
         </div>
         : <div className='DesktopNavBar'>
           <div className='nav-items' >
             {this.renderDesktopItem('Home', constants.linkToHome)}
-            {this.renderDesktopItem('Chapter', constants.linkToChapterIntro, this.state.chaptersList)}
+            {this.renderDesktopItem('Chapter', constants.linkToChapterIntro, this.props.chaptersList)}
           </div>
         </div>
     )
@@ -109,7 +109,7 @@ class NavBar extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  chaptersList: state.chapters.list
+  chaptersList: state.chapters.list || []
 })
 
 const mapDispatchToProps = (dispatch) => ({
