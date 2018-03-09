@@ -1,25 +1,20 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 // Components
 import ChapterIntro from './ChapterIntro'
 import ChapterContent from './ChapterContent'
 import ChapterRecap from './ChapterRecap'
 
-// Services
-import { restGet } from '~/services/api.js'
+// Redux
+import { getOne } from '~/redux/actions/chapters'
 
 class Chapters extends Component {
-  componentWillMount = async () => {
-    const result = await restGet('/chapters/' + this.props.match.params.title)
-    if (result) {
-      this.setState({ result })
-    } else {
-      console.log('redirect inc')
-    }
+  componentWillMount () {
+    this.props.getOne(this.props.match.params.number)
   }
 
   render() {
-    console.log('state', this.state)
     return (
       <div>
         <ChapterIntro />
@@ -30,4 +25,13 @@ class Chapters extends Component {
   }
 }
 
-export default Chapters
+const mapStateToProps = (state) => ({
+  chapter: state.chapters.single || {}
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  getOne: (number) => dispatch(getOne(number)),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Chapters)
+

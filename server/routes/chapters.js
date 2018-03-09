@@ -6,7 +6,6 @@ router.route('/chapters')
   .get((req, res) => {
     Chapter.find({}, (err, data) => {
       if (err) res.send(err)
-      console.log('data', data)
       return res.send(data)
     })
   })

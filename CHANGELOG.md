@@ -1,15 +1,18 @@
 # Change Log
 
 ## [v0.1.2](https://github.com/Krayorn/RolePlayGame/tree/6da30ec7293b66af84a36361a3c4f2b33f939b84) (07/03/2018)
-[Full Changelog](https://github.com/Krayorn/RolePlayGame/compare/V0.1/improvements@%7B5days%7D...V0.1/improvements)
+[Full Changelog](https://github.com/Krayorn/RolePlayGame/compare/V0.1/improvements@%7B29/09/2017%7D...V0.1/improvements@%7B07/03/2018%7D)
 
 **Implemented enhancements:**
 
-- setup Redux in the application.
+- Redux: setup Redux in the application.
+
+**Fix:**
+- clean code to make it more regular
 
 
 ## [v0.1.1](https://github.com/Krayorn/RolePlayGame/tree/V0.1/improvements) (28/09/2017)
-[Full Changelog](https://github.com/Krayorn/RolePlayGame/compare/master...V0.1/improvements)
+[Full Changelog](https://github.com/Krayorn/RolePlayGame/compare/master...V0.1/improvements@%7B29/09/2017%7D)
 
 **Implemented enhancements:**
 

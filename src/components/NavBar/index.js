@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { getAll } from '~/redux/actions/chapters'
 import { connect } from 'react-redux'
 
 // Components
 import { Icon } from '~/defaultComponents'
 
+// Redux
+import { getAll } from '~/redux/actions/chapters'
+
 // Style and helpers
 import * as constants from '~/constant.js'
-// import { componentConnector } from '~/services/utils'
 import './index.less'
 
 class NavBar extends Component {

@@ -7,6 +7,17 @@ const chapters = (state = {}, action) => {
         list: action.payload.response
       })
 
+    case 'GET_ONE_CHAPTER_OK':
+      return Object.assign({}, state, {
+        single: action.payload.response
+      })
+
+    case 'GET_ALL_CHAPTERS_ERROR':
+    case 'GET_ONE_CHAPTER_ERROR':
+      return Object.assign({}, state, {
+        error: action.payload.error
+      })
+
     default:
       return state
   }

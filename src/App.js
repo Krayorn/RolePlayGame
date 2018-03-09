@@ -26,7 +26,7 @@ const App = () => (
           </DefaultLayout>
         }/>
 
-        <Route exact path='/chapters/:title' render={props =>
+        <Route exact path='/chapters/:number' render={props =>
           <DefaultLayout>
             <Chapters {...props} />
           </DefaultLayout>
