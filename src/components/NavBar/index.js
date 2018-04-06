@@ -9,7 +9,7 @@ import { Icon } from '~/defaultComponents'
 import { getAll } from '~/redux/actions/chapters'
 
 // Style and helpers
-import * as constants from '~/constant.js'
+import * as constants from '~/constant'
 import './index.less'
 
 class NavBar extends Component {
