@@ -7,24 +7,42 @@
   transition: 0.5s;
   cursor: pointer;
   display: flex;
-  justify-content: center;
-  align-items: center;
   color: white;
 
-  div {
-    transform: translateY(-20px);
-    opacity: 0;
-    transition: 0.5s;
-    width: 80%;
-    font-size: 25px;
-    font-family: 'hand-writing';
+  .highlightBox-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .highlightBox-text {
+      transform: translateY(-20px);
+      opacity: 0;
+      transition: 0.5s;
+      width: 80%;
+      font-size: 25px;
+      font-family: 'hand-writing';
+    }
+
+    .highlightBox-title {
+      opacity: 1;
+      transform: translateY(0px);
+      transition: 0.5s;
+      font-family: 'old-book';
+      color: @gold;
+      text-shadow: 0px 0px 2px black;
+    }
   }
 
   &:hover {
     filter: brightness(60%);
-    div {
-      transform: translateY(0px);
+    .highlightBox-text {
+      transform: translateY(-40px);
       opacity: 1;
+    }
+    .highlightBox-title {
+      transform: translateY(-40px);
+      opacity: 0;
     }
   }
 }

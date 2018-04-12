@@ -14,8 +14,11 @@ const HighlightBox = (props) => {
       style={homeBackground[props.kind]}
       to={props.link}
     >
-      <div>
-        {rolePlayIntro[props.kind]}
+      <div className='highlightBox-content' >
+        <h1 className='highlightBox-title' >{props.kind}</h1>
+        <div className='highlightBox-text' >
+          {rolePlayIntro[props.kind]}
+        </div>
       </div>
     </Link>
   )
