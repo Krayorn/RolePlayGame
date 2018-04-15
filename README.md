@@ -13,10 +13,10 @@
 
 ## Available Scripts
 
-### `yarn start`
+### `yarn client`
 start the client (default port 3000)
 
-### `nodemon server/`
+### `yarn server`
 start the api (default port 3001)
 
 ## Basic Linter Options

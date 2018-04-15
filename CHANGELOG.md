@@ -8,6 +8,7 @@
 - Redux: setup Redux in the application.
 
 **Fix:**
+
 - clean code to make it more regular
 
 

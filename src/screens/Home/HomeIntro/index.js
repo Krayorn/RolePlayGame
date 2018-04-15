@@ -5,8 +5,7 @@ import './index.less'
 
 const HomeIntro = () => (
   <div className="homeIntro">
-    <div className='square' >
-    </div>
+    <h1>Comptes & legendes d'Unrebor</h1>
   </div>
 )
 
