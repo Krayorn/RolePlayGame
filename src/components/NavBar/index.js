@@ -9,6 +9,7 @@ import { Icon } from '~/defaultComponents'
 import { getAll } from '~/redux/actions/chapters'
 
 // Style and helpers
+import { isDesktop } from '~/services/utils'
 import * as constants from '~/constant'
 import './index.less'
 
@@ -20,21 +21,11 @@ class NavBar extends Component {
   }
 
   handleBurgerClick = () => {
-    this.setState({
-      dropDownOpen: !this.state.dropDownOpen
-    })
+    this.setState(previousState => ({dropDownOpen: !previousState.dropDownOpen}))
   }
 
   handleBurgerItemClick = (name) => {
-    this.setState({
-      [name]: !this.state[name]
-    })
-  }
-
-  handleMousEvent = (name, kind) => {
-    this.setState({
-      [name]: kind === 'in'
-    })
+    this.setState(previousState => ({[name]: !previousState[name]}))
   }
 
   renderMobileDropDownItem = (name, link, drop) => {
@@ -63,7 +54,7 @@ class NavBar extends Component {
               className={this.state[name] ? 'sub-item active' : 'sub-item' }
               to={`/chapters/${item.number}`}
               key={i}>
-              {item.subTitle}
+              {item.title}
             </Link>)
           }
         </div>
@@ -73,15 +64,12 @@ class NavBar extends Component {
 
   renderDesktopItem = (name, link, drop) => {
     return (
-      <span
-        onMouseLeave={() => this.handleMousEvent(name, 'out')}
-        onMouseEnter={() => this.handleMousEvent(name, 'in')}
-      >
+      <span className='desktop-item' >
         <Link
-          className={this.state[name] ? 'item selected' : 'item'} to={link} >{name}</Link>
+          className='item' to={link} >{name}</Link>
         {
           drop &&
-          <div className={this.state[name] ? 'sub-items active' : 'sub-items'} >
+          <div className='sub-items' >
             {drop.map((item, i) => <Link className='sub-item' key={i} to={`/chapters/${item.number}`}>{item.title}</Link>)}
           </div>
         }
@@ -91,7 +79,7 @@ class NavBar extends Component {
 
   render () {
     return (
-      window.innerWidth <= 992
+      !isDesktop()
         ? <div className='MobileNavBar'>
           <span onClick={this.handleBurgerClick} className='burger-menu' >☰</span>
           <div className={this.state.dropDownOpen ? 'open mobile-dropdown' : 'close mobile-dropdown'}>

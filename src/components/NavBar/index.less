@@ -91,33 +91,38 @@
     font-size: 22px;
     justify-content: center;
 
-    .item {
-      padding: 0px 10px;
-
-      &.selected {
-        text-shadow: 0px 0px 1px lightgray;
-      }
-    }
-
-    .sub-items {
-      position: absolute;
-      background: @dark;
-      border-radius: 4px;
-      box-shadow: 0 50px 100px rgba(50,50,93,.1), 0 15px 35px rgba(50,50,93,.15), 0 5px 15px rgba(0,0,0,.1);
-      transition:all 0.3s, opacity 0.1s, transform 0.2s;
-      transform-origin: 50% 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      opacity:0;
-
-      .sub-item {
+    .desktop-item {
+      .item {
         padding: 0px 10px;
       }
 
-      &.active {
-        opacity: 1;
+      .sub-items {
+        position: absolute;
+        background: @dark;
+        border-radius: 4px;
+        box-shadow: 0 50px 100px rgba(50,50,93,.1), 0 15px 35px rgba(50,50,93,.15), 0 5px 15px rgba(0,0,0,.1);
+        transition:all 0.3s, opacity 0.1s, transform 0.2s;
+        transform-origin: 50% 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        opacity:0;
+
+        .sub-item {
+          padding: 0px 10px;
+        }
       }
+
+      &:hover {
+        .item {
+          text-shadow: 0px 0px 1px lightgray;
+        }
+
+        .sub-items {
+          opacity: 1;
+        }
+      }
+
     }
   }
 }
