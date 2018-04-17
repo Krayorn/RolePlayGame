@@ -1,3 +1,5 @@
+[![DeepScan grade](https://deepscan.io/api/projects/2246/branches/12626/badge/grade.svg)](https://deepscan.io/dashboard#view=project&pid=2246&bid=12626)
+
 ## Table of Contents
 - [Requirements](#Install)
 - [Available Scripts](#available-scripts)
@@ -9,7 +11,11 @@
 - [MongoDB V 3.4.1](https://www.mongodb.com/download-center#community)
 - [Yarn](https://yarnpkg.com/en/docs/install)
 
+We also recommand you to use the [Redux dev tools extension](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
+
 `yarn install` to download the requirements
+
+
 
 ## Available Scripts
 
