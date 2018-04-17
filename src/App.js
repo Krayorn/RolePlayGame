@@ -13,7 +13,12 @@ import Home from './screens/Home'
 import Chapters from './screens/Chapters'
 import NotFound from './screens/NotFound'
 
-const store = createStore(reducers, compose(middlewares, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()))
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+const store = createStore(reducers, composeEnhancers(
+  middlewares
+))
+
+// const store = createStore(reducers, compose(middlewares, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()))
 
 const App = () => (
   <Provider store={store} >
