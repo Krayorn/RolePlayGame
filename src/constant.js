@@ -37,15 +37,19 @@ export const rolePlayIntro = {
 
 export const homeBackground = {
   Chapters : {
+    title: 'Chapitres',
     backgroundImage: 'url(http://flaviobolla.com/images/dun_artorith.jpg?crc=3914925258)',
   },
   Characters : {
+    title: 'Personnages',
     backgroundImage: 'url(https://secure.meetupstatic.com/photos/theme_body/4/9/b/4/full_7158868.jpeg)',
   },
   Lore : {
+    title: 'Savoir',
     backgroundImage: 'url(https://i.pinimg.com/originals/dd/3a/73/dd3a738bd3240e949ec53ab592a95b01.jpg)',
   },
   Encyclopedia : {
+    title: 'Encyclopedie',
     backgroundImage: 'url(http://geekandsundry.com/wp-content/uploads/2016/11/goblinheader.jpg)',
   }
 }
