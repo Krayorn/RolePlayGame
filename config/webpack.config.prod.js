@@ -26,7 +26,7 @@ if (env.stringified['process.env'].NODE_ENV !== '"production"') {
 const cssFilename = 'static/css/[name].[contenthash:8].css'
 
 const extractTextPluginOptions = shouldUseRelativeAssetPaths
-{ publicPath: Array(cssFilename.split('/').length).join('../') }
+  ? { publicPath: Array(cssFilename.split('/').length).join('../') }
   : {}
 
 module.exports = {
