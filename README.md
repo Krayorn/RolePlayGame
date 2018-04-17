@@ -19,6 +19,9 @@ start the client (default port 3000)
 ### `yarn server`
 start the api (default port 3001)
 
+### `mongod`
+you'll also need to launch the database in the background ( developement db coming soon... )
+
 ## Basic Linter Options
 
 - Use singlequotes - no doublequotes

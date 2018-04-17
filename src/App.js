@@ -18,8 +18,6 @@ const store = createStore(reducers, composeEnhancers(
   middlewares
 ))
 
-// const store = createStore(reducers, compose(middlewares, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()))
-
 const App = () => (
   <Provider store={store} >
     <main>
