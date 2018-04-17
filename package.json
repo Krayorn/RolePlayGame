@@ -5,6 +5,7 @@
   "description": "",
   "license": "ISC",
   "scripts": {
+    "client": "node scripts/start.js",
     "start": "node scripts/start.js",
     "server": "nodemon server/",
     "bundle-icons": "svg-sprite -s --dest=src/defaultComponents/Icon/ --ss icons.svg src/icons/*.svg",

@@ -11,7 +11,7 @@ const HighlightBox = (props) => {
   return (
     <Link
       className='highlightBox'
-      style={homeBackground[props.kind].homeBackground}
+      style={homeBackground[props.kind].style}
       to={props.link}
     >
       <div className='highlightBox-content' >
