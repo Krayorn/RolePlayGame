@@ -4,7 +4,9 @@ import React from 'react'
 import './index.less'
 
 const Footer = () => (
-  <div>I'm the footer</div>
+  <div className='footer' >
+    &copy; 2018 - Tous droits réservés
+  </div>
 )
 
 export default Footer
